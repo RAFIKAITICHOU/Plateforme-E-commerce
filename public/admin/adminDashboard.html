@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <!-- Font Awesome CSS -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <!-- Custom Styles -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- Responsive Styles -->
+    <link href="css/responsive.css" rel="stylesheet" />
+</head>
+<body class="sub_page">
+    <div class="hero_area">
+        <!-- Header Section -->
+        <header class="header_section">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg custom_nav-container">
+                    <a class="navbar-brand" href="adminDashboard.html"><img width="250" src="images/One click2.jpeg" alt="One Click" /></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class=""> </span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="adminDashboard.html">Dashboard</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="orders.html">Orders</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="products.html">Products</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="payments.html">Payments</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="login.html">Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!-- End Header Section -->
+    </div>
+
+    <!-- Main Dashboard Content -->
+    <div class="container mt-5">
+        <h1 class="text-center">Admin Dashboard</h1>
+
+        <!-- Summary Statistics -->
+        <div class="row mt-4">
+            <div class="col-md-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Sales</h5>
+                        <p class="card-text" id="totalSales">$0</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Products</h5>
+                        <p class="card-text" id="totalProducts">0</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Users</h5>
+                        <p class="card-text" id="totalUsers">0</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Revenue</h5>
+                        <p class="card-text" id="revenue">$0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sales Trend Chart -->
+        <div class="mt-5">
+            <h3>Sales Trends</h3>
+            <canvas id="salesChart"></canvas>
+        </div>
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Footer Section -->
+    <footer class="footer_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 footer-col">
+                    <div class="footer_contact">
+                        <h4>Contactez-nous</h4>
+                        <div class="contact_link_box">
+                            <a href="">
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                <span>Maroc, Casablanca</span>
+                            </a>
+                            <a href="tel:+212 (0)5000607637">
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                <span>Appeler : +212 (0)5000607637</span>
+                            </a>
+                            <a href="mailto:contact@oneclick.ma">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <span>contact@oneclick.ma</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-info">
+                <div class="col-lg-7 mx-auto px-0 text-center">
+                    <p>&copy; <span id="displayYear"></span> Tous droits réservés par One Click Group</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        window.onload = function() {
+            updateDashboard();
+        };
+
+        function updateDashboard() {
+            // Get data from localStorage or default values
+            const products = JSON.parse(localStorage.getItem('products')) || [];
+            const sales = JSON.parse(localStorage.getItem('sales')) || [];
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            
+            // Calculate total products, sales, users, and revenue
+            const totalProducts = products.length;
+            const totalSales = sales.length;
+            const totalUsers = users.length;
+
+            // Calculate revenue from sales
+            const revenue = sales.reduce((total, sale) => total + sale.amount, 0);
+
+            // Update the dashboard with the calculated values
+            document.getElementById('totalSales').innerText = `$${totalSales}`;
+            document.getElementById('totalProducts').innerText = totalProducts;
+            document.getElementById('totalUsers').innerText = totalUsers;
+            document.getElementById('revenue').innerText = `$${revenue}`;
+
+            // Create a sales trends chart
+            const ctx = document.getElementById('salesChart').getContext('2d');
+            const salesData = sales.map(sale => sale.amount);
+            const labels = sales.map(sale => new Date(sale.date).toLocaleDateString());
+
+            const chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Sales Revenue',
+                        data: salesData,
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        fill: false
+                    }]
+                }
+            });
+        }
+    </script>
+</body>
+</html>
