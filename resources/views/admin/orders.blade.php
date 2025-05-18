@@ -36,7 +36,7 @@
             <table class="table table-bordered table-hover align-middle shadow-sm rounded">
                 <thead class="table-dark text-center">
                     <tr>
-                        <th>#</th>
+                        <th>N</th>
                         <th>Order ID</th>
                         <th>Utilisateur</th>
                         <th>Produits</th>
@@ -53,7 +53,7 @@
                         <td class="text-start">
                             <ul class="mb-0 ps-3">
                                 @foreach(json_decode($order->products) as $product)
-                                    <li>{{ $product->product_name }} (x{{ $product->quantity }}) - ${{ $product->total }}</li>
+                                    <li>{{ $product->product_name }} (x{{ $product->quantity }}) - {{ $product->total }} DH</li>
                                 @endforeach
                             </ul>
                         </td>

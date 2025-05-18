@@ -36,7 +36,7 @@
 <section class="client_section layout_padding">
     <div class="container">
         <div class="heading_container heading_center">
-            <h2>Customer's Testimonial</h2>
+            <h2>Customer's Testimonial</h2>aaaa
         </div>
         <div id="carouselExample3Controls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">

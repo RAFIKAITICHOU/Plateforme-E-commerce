@@ -29,7 +29,7 @@ class ProductController extends Controller
             'image'       => 'required|image|max:2048',
         ]);
 
-        // ✅ Déplacement manuel dans public/images
+        //   Déplacement manuel dans public/images
         $imageName = time() . '.' . $request->image->extension();
         $request->image->move(public_path('images'), $imageName);
 
@@ -38,7 +38,7 @@ class ProductController extends Controller
             'description' => $request->description,
             'price'       => $request->price,
             'stock'       => $request->stock,
-            'image'       => $imageName, // ✅ uniquement le nom
+            'image'       => $imageName, //   uniquement le nom
         ]);
 
         return redirect()->back()->with('success', 'Produit ajouté avec succès !');
@@ -49,7 +49,7 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        // ✅ Supprimer l'image dans public/images
+        //   Supprimer l'image dans public/images
         if ($product->image) {
             $imagePath = public_path('images/' . $product->image);
             if (file_exists($imagePath)) {
@@ -84,7 +84,7 @@ class ProductController extends Controller
 
         $data = $request->only(['name', 'description', 'price', 'stock']);
 
-        // ✅ Si nouvelle image : supprimer l’ancienne + enregistrer la nouvelle
+        //   Si nouvelle image : supprimer l’ancienne + enregistrer la nouvelle
         if ($request->hasFile('image')) {
             if ($product->image) {
                 $oldImagePath = public_path('images/' . $product->image);
@@ -111,21 +111,19 @@ class ProductController extends Controller
         $products = Product::all();
         return view('observateur.products', compact('products'));
     }
-public function showDetails($id)
-{
-    $product = Product::findOrFail($id);
-    return view('observateur.product_details', compact('product'));
+    public function showDetails($id)
+    {
+        $product = Product::findOrFail($id);
+        return view('observateur.product_details', compact('product'));
+    }
+    public function userProductDetails($id)
+    {
+        $product = Product::findOrFail($id);
+        return view('user.product_details', compact('product'));
+    }
+    public function userProducts()
+    {
+        $products = Product::all();
+        return view('user.products', compact('products'));
+    }
 }
-public function userProductDetails($id)
-{
-    $product = Product::findOrFail($id);
-    return view('user.product_details', compact('product'));
-}
-public function userProducts()
-{
-    $products = Product::all();
-    return view('user.products', compact('products'));
-}
-
-}
-

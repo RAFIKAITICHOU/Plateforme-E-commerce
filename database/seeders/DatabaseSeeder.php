@@ -11,11 +11,11 @@ class UserSeeder extends Seeder
 {
     public function run(): void
     {
-        // ✅ Créer les rôles s'ils n'existent pas
+        //   Créer les rôles s'ils n'existent pas
         $adminRole = Role::firstOrCreate(['name' => 'administrateur']);
         $clientRole = Role::firstOrCreate(['name' => 'client']);
 
-        // ✅ Créer un administrateur
+        //   Créer un administrateur
         $admin = User::firstOrCreate(
             ['email' => 'aithmadsoufiane7@gmail.com'],
             [
@@ -25,7 +25,7 @@ class UserSeeder extends Seeder
         );
         $admin->assignRole($adminRole);
 
-        // ✅ Créer un utilisateur client
+        //   Créer un utilisateur client
         $client = User::firstOrCreate(
             ['email' => 'User@gmail.com'],
             [

@@ -3,7 +3,7 @@
     margin-right: 10px;
 }
 .header_section {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* ✅ ombre douce en bas */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /*   ombre douce en bas */
     background-color: #fff;
     position: relative;
     z-index: 10;

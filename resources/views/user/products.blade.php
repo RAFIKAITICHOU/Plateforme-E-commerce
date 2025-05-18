@@ -11,7 +11,7 @@
    <link rel="stylesheet" href="{{ asset('home/css/style.css') }}">
    <link rel="stylesheet" href="{{ asset('home/css/responsive.css') }}">
 
-   <!-- ✅ STYLES personnalisés pour cette page -->
+   <!--   STYLES personnalisés pour cette page -->
    <style>
       .option1 {
          background-color: #f7444e;
@@ -86,7 +86,7 @@
                   @csrf
                   <div class="option_container">
                      <div class="options d-flex flex-column align-items-center gap-2">
-                        <!-- ✅ Sélecteur quantité visible au survol -->
+                        <!--   Sélecteur quantité visible au survol -->
                         <div class="input-group input-group-sm justify-content-center" style="max-width: 120px;">
                            <button type="button" class="btn btn-outline-light"
                                    onclick="this.parentNode.querySelector('input').stepDown()">−</button>

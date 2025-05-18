@@ -61,7 +61,7 @@
 
       @if($cartItems->count())
    <div class="text-end mt-4">
-      <h4 class="text-success">Total général : ${{ $total }}</h4>
+      <h4 class="text-success">Total général : {{ $total }}DH</h4>
 
    <form method="GET" action="{{ route('user.payment') }}">
     <button type="submit" class="btn btn-success">Passer la commande</button>

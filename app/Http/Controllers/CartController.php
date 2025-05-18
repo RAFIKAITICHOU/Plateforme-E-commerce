@@ -19,8 +19,8 @@ class CartController extends Controller
         $userId = Auth::id();
 
         $cart = Cart::where('user_id', $userId)
-                    ->where('product_id', $id)
-                    ->first();
+            ->where('product_id', $id)
+            ->first();
 
         if ($cart) {
             $cart->increment('quantity');
@@ -41,8 +41,8 @@ class CartController extends Controller
     public function viewCart()
     {
         $cartItems = Cart::with('product')
-                         ->where('user_id', Auth::id())
-                         ->get();
+            ->where('user_id', Auth::id())
+            ->get();
 
         $total = $cartItems->sum(fn($item) => $item->product->price * $item->quantity);
 
@@ -75,24 +75,24 @@ class CartController extends Controller
     /**
      * Rediriger vers la vue de formulaire selon le choix
      */
-   public function redirectToPaymentForm(Request $request)
-{
-    $request->validate([
-        'payment_method' => 'required|in:paypal,carte_bancaire,virement',
-    ]);
+    public function redirectToPaymentForm(Request $request)
+    {
+        $request->validate([
+            'payment_method' => 'required|in:paypal,carte_bancaire,virement',
+        ]);
 
-    $method = $request->payment_method;
+        $method = $request->payment_method;
 
-    session(['selected_payment_method' => $method]);
+        session(['selected_payment_method' => $method]);
 
-    if ($method === 'paypal') {
-        return view('user.paypal');
-    } elseif ($method === 'carte_bancaire') {
-        return view('user.card');
-    } else {
-        return view('user.virement');
+        if ($method === 'paypal') {
+            return view('user.paypal');
+        } elseif ($method === 'carte_bancaire') {
+            return view('user.card');
+        } else {
+            return view('user.virement');
+        }
     }
-}
 
 
     /**
@@ -146,21 +146,20 @@ class CartController extends Controller
         $orders = Order::where('user_id', Auth::id())->latest()->get();
         return view('user.orders', compact('orders'));
     }
-public function add_cart(Request $request, $id)
-{
-    $product = Product::findOrFail($id);
-    $user = auth()->user();
+    public function add_cart(Request $request, $id)
+    {
+        $product = Product::findOrFail($id);
 
-    $quantity = $request->input('quantity', 1);
+        $user = auth()->user();
 
-    $cart = new \App\Models\Cart();
-    $cart->user_id = $user->id;
-    $cart->product_id = $product->id;
-    $cart->quantity = $quantity;
-    // ❌ NE PAS insérer "price" car la colonne n'existe pas
-    $cart->save();
+        $quantity = $request->input('quantity', 1);
 
-    return redirect()->back()->with('message', 'Produit ajouté au panier avec succès');
-}
+        $cart = new \App\Models\Cart();
+        $cart->user_id = $user->id;
+        $cart->product_id = $product->id;
+        $cart->quantity = $quantity;
+        $cart->save();
 
+        return redirect()->back()->with('message', 'Produit ajouté au panier avec succès');
+    }
 }

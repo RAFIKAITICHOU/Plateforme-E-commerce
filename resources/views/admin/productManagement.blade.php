@@ -72,7 +72,7 @@
                   <td>#{{ $product->id }}</td>
                   <td>{{ $product->name }}</td>
                   <td>{{ $product->description }}</td>
-                  <td>{{ $product->price }} €</td>
+                  <td>{{ $product->price }} DH</td>
                   <td>{{ $product->stock }}</td>
                   <td>
                      <a href="{{ route('products.edit', $product->id) }}" class="btn btn-warning btn-sm">Modifier</a>

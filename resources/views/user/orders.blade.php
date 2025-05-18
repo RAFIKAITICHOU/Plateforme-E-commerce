@@ -32,7 +32,7 @@
         <table class="table table-bordered table-striped text-center">
             <thead>
                 <tr>
-                    <th>#</th>
+                    <th>N</th>
                     <th>Produits</th>
                     <th>Total</th>
                     <th>Statut</th>
@@ -47,11 +47,11 @@
                             @php $total = 0; @endphp
                             @foreach(json_decode($order->products) as $p)
                                 @php $total += $p->total; @endphp
-                                <li>{{ $p->product_name }} (x{{ $p->quantity }}) - ${{ $p->total }}</li>
+                                <li>{{ $p->product_name }} (x{{ $p->quantity }}) - {{ $p->total }} DH</li>
                             @endforeach
                         </ul>
                     </td>
-                    <td>${{ $total }}</td>
+                    <td>{{ $total }} DH</td>
                     <td>
                         <span class="badge bg-{{ $order->status == 'validée' ? 'success' : ($order->status == 'annulée' ? 'danger' : 'secondary') }}">
                             {{ ucfirst($order->status) }}

@@ -37,15 +37,15 @@ class HomeController extends Controller
         return view('observateur.contact');
     }
 
-    public function testimonial()
-    {
-        $clients_fideles = User::withCount('orders')
-            ->orderByDesc('orders_count')
-            ->take(3)
-            ->get();
+    // public function testimonial()
+    // {
+    //     $clients_fideles = User::withCount('orders')
+    //         ->orderByDesc('orders_count')
+    //         ->take(3)
+    //         ->get();
 
-        return view('observateur.testimonial', compact('clients_fideles'));
-    }
+    //     return view('observateur.testimonial', compact('clients_fideles'));
+    // }
 
     public function blog()
     {

@@ -7,20 +7,26 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Exécute la migration.
      */
-   public function up()
-{
-    Schema::table('payments', function (Blueprint $table) {
-        $table->unsignedBigInteger('order_id')->after('user_id');
-    });
-}
+    public function up()
+    {
+        Schema::table('payments', function (Blueprint $table) {
+            if (!Schema::hasColumn('payments', 'order_id')) {
+                $table->unsignedBigInteger('order_id')->after('user_id');
+            }
+        });
+    }
 
-public function down()
-{
-    Schema::table('payments', function (Blueprint $table) {
-        $table->dropColumn('order_id');
-    });
-}
-
+    /**
+     * Annule la migration.
+     */
+    public function down()
+    {
+        Schema::table('payments', function (Blueprint $table) {
+            if (Schema::hasColumn('payments', 'order_id')) {
+                $table->dropColumn('order_id');
+            }
+        });
+    }
 };

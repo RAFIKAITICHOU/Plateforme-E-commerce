@@ -93,7 +93,7 @@ class AdminController extends Controller
         return view('admin.contacts', compact('contacts'));
     }
 
-    // ✅ Revenus mensuels dynamiques
+    //  Revenus mensuels dynamiques
     public function getSalesData()
     {
         $orders = Order::select('products', 'created_at')->get();
@@ -121,7 +121,7 @@ class AdminController extends Controller
         return response()->json($result);
     }
 
-    // ✅ Répartition des ventes par produit
+    //  Répartition des ventes par produit
     public function getSalesPieData()
     {
         $orders = Order::select('products')->get();
