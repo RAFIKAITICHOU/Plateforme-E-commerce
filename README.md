@@ -9,7 +9,7 @@ Le projet a été réalisé dans un contexte pédagogique, permettant de mettre 
 ## 🖼️ Logo de l'application
 
 ```md
-![Logo One Click](./logo.png)
+![Logo One Click](logo.png)
 ```
 
 ---
