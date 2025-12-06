@@ -9,7 +9,7 @@ Le projet a été réalisé dans un contexte pédagogique, permettant de mettre 
 ## 🖼️ Logo de l'application
 
 ```md
-![Logo One Click](https://github.com/RAFIKAITICHOU/Plateforme-E-commerce/blob/main/public/images/One%20Clickkk.png)
+![Logo One Click](./public/images/One%20Clickkk.png)
 ```
 
 ---
