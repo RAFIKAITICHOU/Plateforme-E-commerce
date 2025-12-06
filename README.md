@@ -8,10 +8,8 @@ Le projet a été réalisé dans un contexte pédagogique, permettant de mettre 
 
 ## 🖼️ Logo de l'application
 
-*(Insérer ici votre fichier logo, par exemple :)*
-
 ```md
-![Logo One Click](./images/One Clickkk.png)
+![Logo One Click](https://github.com/RAFIKAITICHOU/Plateforme-E-commerce/blob/main/public/images/One%20Clickkk.png)
 ```
 
 ---
