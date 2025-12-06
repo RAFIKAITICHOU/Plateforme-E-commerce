@@ -1,61 +1,161 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🛒 One Click — Plateforme E‑commerce Responsive
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## 📋 Contexte
 
-## About Laravel
+One Click est une plateforme e-commerce moderne, intuitive et entièrement responsive développée pour faciliter la vente en ligne. Elle répond aux exigences actuelles des commerçants souhaitant automatiser leur activité, améliorer l’expérience client et centraliser la gestion des produits, commandes et paiements.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Le projet a été réalisé dans un contexte pédagogique, permettant de mettre en pratique des compétences en développement web complet (front-end + back-end) tout en respectant une méthodologie structurée.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🖼️ Logo de l'application
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+*(Insérer ici votre fichier logo, par exemple :)*
 
-## Learning Laravel
+```md
+![Logo One Click](./images/One Clickkk.png)
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 🎯 Problématique
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+De nombreux sites e-commerce souffrent encore de limitations :
 
-## Laravel Sponsors
+* Gestion semi‑manuelle des produits et commandes
+* Absence de centralisation des données
+* Mauvaise synchronisation des stocks
+* Faible automatisation des processus
+* Expérience utilisateur peu optimisée
+* Manque de traçabilité et de rapports statistiques
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Ces problèmes nuisent à la productivité des gestionnaires et à la satisfaction des clients.
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development/)**
-- **[Active Logic](https://activelogic.com)**
+## 🎯 Objectifs
 
-## Contributing
+### 🎯 Objectif Principal
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Développer une plateforme e-commerce complète, sécurisée et performante permettant aux commerçants de gérer efficacement leurs produits, commandes, utilisateurs et paiements, tout en offrant une excellente expérience aux clients.
 
-## Code of Conduct
+### 🎯 Objectifs Spécifiques
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+* **Automatisation des processus** : commandes, stocks, paiements
+* **Centralisation des données** : produits, utilisateurs, ventes, messages
+* **Expérience utilisateur fluide** : interface rapide, claire et responsive
+* **Suivi des ventes** via tableau de bord et statistiques
+* **Sécurisation** de l’authentification et de la gestion des données
+* **Traçabilité** : suivi des commandes, paiements et messages clients
+* **Optimisation marketing** : gestion des abonnés newsletter
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 🛠️ Technologies Utilisées
 
-## License
+### 🖥️ Frontend
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+| Technologie | Rôle                                      |
+| ----------- | ----------------------------------------- |
+| HTML5       | Structure des pages                       |
+| CSS3        | Design et mise en forme                   |
+| JavaScript  | Interactivité et comportements dynamiques |
+| Bootstrap   | Responsive design et composants UI        |
+
+### 🔧 Backend
+
+| Technologie        | Rôle                             |
+| ------------------ | -------------------------------- |
+| PHP 8+             | Langage serveur                  |
+| Laravel            | Framework MVC robuste            |
+| Blade              | Moteur de templates              |
+| Spatie Permissions | Gestion des rôles et permissions |
+| Chart.js           | Graphiques du tableau de bord    |
+
+### 🗄️ Base de Données
+
+| Technologie | Rôle                          |
+| ----------- | ----------------------------- |
+| MySQL       | Base de données relationnelle |
+
+### ⚙️ Outils de Développement
+
+| Outil              | Rôle                                 |
+| ------------------ | ------------------------------------ |
+| Visual Studio Code | Environnement de développement       |
+| Composer           | Gestionnaire de dépendances PHP      |
+| XAMPP              | Serveur local (Apache, MySQL)        |
+| Git & GitHub       | Gestion de versions                  |
+| Canva              | Conception des ressources graphiques |
+
+---
+
+## 💻 Commandes d’installation
+
+### 1️⃣ Cloner le projet
+
+```bash
+git clone https://github.com/votre-lien/oneclick-ecommerce.git
+cd oneclick-ecommerce
+```
+
+### 2️⃣ Installer les dépendances
+
+```bash
+composer install
+npm install
+npm run build
+```
+
+### 3️⃣ Configurer l'environnement
+
+Créer un fichier `.env` :
+
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+
+Configurer votre base MySQL dans `.env`.
+
+### 4️⃣ Exécuter les migrations + seeders
+
+```bash
+php artisan migrate --seed
+```
+
+### 5️⃣ Lancer le serveur
+
+```bash
+php artisan serve
+```
+
+---
+
+## 🛡️ Sécurité
+
+* Authentification sécurisée via Jetstream / Laravel Auth
+* Gestion des rôles et permissions (Admin / Client)
+* Protection CSRF, XSS et validation des formulaires
+* Hashage des mots de passe via Bcrypt
+* Sessions sécurisées
+
+---
+
+## 🧑‍💼 Auteurs
+
+* **AIT ICHOU Rafik**
+* **AIT HMAD Soufaine**
+* **SALIHI Yassine**
+
+Encadré par : **Pr. OUMAIMA STITINI**
+
+---
+
+## 📄 Licence
+
+Projet académique – libre d’utilisation à des fins pédagogiques.
+
+---
+
+## 📅 Dernière mise à jour
+
+Mai 2025
