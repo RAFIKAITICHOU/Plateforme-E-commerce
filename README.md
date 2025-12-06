@@ -91,8 +91,8 @@ Développer une plateforme e-commerce complète, sécurisée et performante perm
 ### 1️⃣ Cloner le projet
 
 ```bash
-git clone https://github.com/votre-lien/oneclick-ecommerce.git
-cd oneclick-ecommerce
+git clone https://github.com/RAFIKAITICHOU/Plateforme-E-commerce.git
+cd Plateforme-E-commerce
 ```
 
 ### 2️⃣ Installer les dépendances
