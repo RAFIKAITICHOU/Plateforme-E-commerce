@@ -8,7 +8,7 @@ Le projet a été réalisé dans un contexte pédagogique, permettant de mettre 
 
 ## 🖼️ Logo de l'application
 
-![Logo One Click](./logo.png)
+![Logo One Click](./onelogo.png)
 
 ---
 
